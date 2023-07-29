@@ -13,11 +13,14 @@ export class TaskComponent {
   @Input("index")
   public indexProps!: number;
 
-  public isChecked: boolean = this.taskProps.status;
+  // public isChecked: boolean = this.taskProps.status;
+
+  @Input("status")
+  public isCheckedProps!: boolean;
 
   constructor() {}
 
   onChangeChecked() {
-    this.isChecked = !this.isChecked;
+    this.isCheckedProps = !this.isCheckedProps;
   }
 }

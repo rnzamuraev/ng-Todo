@@ -15,7 +15,7 @@ export class DataService {
   constructor(private localStorage: LocalStorageService) {}
 
   public fetchData(): Observable<ITask[]> {
-    const data: null | ITask[] = this.localStorage.get(EStaticVariables.TODO_KEY_TASK);
+    const data: null | ITask[] = this.localStorage.get(EStaticVariables.TOKEN_FOR_TASKS);
     console.log(data);
 
     if (data === null) {
@@ -28,7 +28,7 @@ export class DataService {
   }
 
   public getCategories(): Observable<ICategory[]> {
-    const data: null | ICategory[] = this.localStorage.get(EStaticVariables.TODO_KEY_CATEGORY);
+    const data: null | ICategory[] = this.localStorage.get(EStaticVariables.TOKEN_FOR_CATEGORY);
     console.log(data);
 
     if (data === null) {
@@ -37,7 +37,7 @@ export class DataService {
   }
 
   public getPriority(): Observable<IPriority[]> {
-    const data: null | IPriority[] = this.localStorage.get(EStaticVariables.TODO_KEY_CATEGORY);
+    const data: null | IPriority[] = this.localStorage.get(EStaticVariables.TOKEN_FOR_CATEGORY);
     console.log(data);
 
     if (data === null) {

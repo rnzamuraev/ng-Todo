@@ -1,6 +1,8 @@
 export enum EStaticVariables {
-  TODO_KEY_TASK = "__todo__",
-  TODO_KEY_CATEGORY = "__category__",
-  TODO_KEY_PRIORITY = "__priority__",
-  INITIAL_CATEGORY_TASK = "All",
+  TOKEN_FOR_TASKS = "__todo__",
+  TOKEN_FOR_CATEGORY = "__category__",
+  TOKEN_FOR_PRIORITY = "__priority__",
+  INITIAL_ACTIVE_CATEGORY = "All",
+  TASK_WITHOUT_COLOR = "#fff",
+  TASK_COMPLETED_COLOR = "#ccc",
 }
