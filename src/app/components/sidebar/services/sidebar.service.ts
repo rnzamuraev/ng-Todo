@@ -6,8 +6,8 @@ import { EStaticVariables } from "src/app/shared/types/staticVariable.enum";
   providedIn: "root",
 })
 export class SidebarService {
-  private categoryTask$ = new BehaviorSubject<string>(EStaticVariables.INITIAL_CATEGORY_TASK);
-
+  private categoryTask$ = new BehaviorSubject<string>(EStaticVariables.INITIAL_ACTIVE_CATEGORY);
+  COLOR = "#EEE";
   constructor() {}
 
   // *** categoryTask ***//

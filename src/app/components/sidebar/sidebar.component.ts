@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { map, tap } from "rxjs";
+import { map } from "rxjs";
 
 import { DataService } from "src/app/shared/services/data.service";
 import { SidebarService } from "./services/sidebar.service";
@@ -18,6 +18,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.initializeCategory();
+    this.initializeCategoryTask();
   }
 
   private initializeCategory(): void {

@@ -1,5 +1,5 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
 import { SharedModule } from "src/app/shared/shared.module";
@@ -8,8 +8,8 @@ import { TaskListTableComponent } from "./dashboard/task-list-table/task-list-ta
 import { FooterComponent } from "./footer/footer.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
-import { TaskComponent } from './dashboard/task-list-table/task/task.component';
-import { InfoPanelComponent } from './dashboard/info-panel/info-panel.component';
+import { TaskComponent } from "./dashboard/task-list-table/task/task.component";
+import { InfoPanelComponent } from "./dashboard/info-dashboard/info-dashboard.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,11 @@ import { InfoPanelComponent } from './dashboard/info-panel/info-panel.component'
     TaskComponent,
     InfoPanelComponent,
   ],
-  imports: [CommonModule, RouterModule, SharedModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedModule,
+  ],
   exports: [
     FooterComponent,
     NavbarComponent,

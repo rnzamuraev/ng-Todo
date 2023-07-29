@@ -12,10 +12,11 @@ export class Data {
   ];
 
   static priorities: IPriority[] = [
-    { id: 1, name: "little", color: "#e5e5e5" },
-    { id: 2, name: "average", color: "#85d1b2" },
-    { id: 3, name: "high", color: "#f1828d" },
-    { id: 4, name: "very urgent", color: "#f1128d" },
+    // { id: 1, name: "little", color: "#e5e5e5" },
+    { id: 1, name: "little", color: "#eeff66" },
+    { id: 2, name: "average", color: "#44cc66" },
+    { id: 3, name: "high", color: "#ff55bb" },
+    { id: 4, name: "very high", color: "#ff3344" },
   ];
 
   static task: ITask[] = [
@@ -23,7 +24,7 @@ export class Data {
       id: 1,
       name: "run 5 kilometers",
       category: Data.categories[1],
-      status: true,
+      status: false,
       priority: Data.priorities[1],
       date: new Date("202-0-27"),
     },
@@ -31,7 +32,7 @@ export class Data {
       id: 2,
       name: "learn English",
       category: Data.categories[2],
-      status: true,
+      status: false,
       priority: Data.priorities[3],
       date: new Date("2023-07-27"),
     },
@@ -39,7 +40,7 @@ export class Data {
       id: 3,
       name: "buy fruits",
       category: Data.categories[3],
-      status: true,
+      status: false,
       priority: Data.priorities[0],
       date: null,
     },
@@ -55,7 +56,7 @@ export class Data {
       id: 5,
       name: "To wash a car",
       category: Data.categories[4],
-      status: true,
+      status: false,
       priority: Data.priorities[0],
       date: new Date("2023-07-27"),
     },
@@ -63,8 +64,8 @@ export class Data {
       id: 6,
       name: "change oil",
       category: Data.categories[4],
-      status: true,
-      priority: Data.priorities[3],
+      status: false,
+      priority: Data.priorities[2],
       date: new Date("2023-07-27"),
     },
   ];
