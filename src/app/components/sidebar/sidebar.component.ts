@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { map } from "rxjs";
 
 import { DataService } from "src/app/shared/services/data.service";
 import { SidebarService } from "./services/sidebar.service";
@@ -22,7 +21,7 @@ export class SidebarComponent implements OnInit {
   }
 
   private initializeCategory(): void {
-    this.dataService.getCategories().subscribe(category => {
+    this.dataService.getAllCategories().subscribe(category => {
       console.log(category);
 
       this.categories = category.map(category => {
@@ -40,11 +39,11 @@ export class SidebarComponent implements OnInit {
 
   public onGetTaskByCategory(category: string) {
     this.sidebarService.setCategoryTask$(category);
-    this.dataService.fetchData().pipe(
-      map(tasks => {
-        return this.dataService.filterByCategory(tasks, category);
-      })
-      // tap(tasks => )
-    );
+    // this.dataService.getAllTasks().pipe(
+    //   map(tasks => {
+    //     return this.dataService.filterByCategory(tasks, category);
+    //   })
+    // tap(tasks => )
+    // );
   }
 }

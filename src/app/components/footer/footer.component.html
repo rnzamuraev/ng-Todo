@@ -1,32 +1,37 @@
 <footer class="footer py-4">
   <div class="container-fluid">
-    <nav class="pull-left row align-items-center justify-content-lg-between">
-      <ul>
-        <li>
-          <a href="https://www.creative-tim.com">
-            Creative Tim
-          </a>
-        </li>
-        <li>
-          <a href="https://creative-tim.com/about-us">
-            About Us
-          </a>
-        </li>
-        <li>
-          <a href="http://blog.creative-tim.com">
-            Blog
-          </a>
-        </li>
-        <li>
-          <a href="https://www.creative-tim.com/license">
-            Licenses
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="copyright pull-right">
-      &copy;
-      {{test | date: 'yyyy.mm'}}, Application - to-do list
+    <div class="pull-left row align-items-center justify-content-lg-between">
+      <div class="col-lg-6 mb-lg-0 mb-4">
+        <!-- <div class="copyright pull-right"> -->
+        <div class="copyright text-center text-sm text-muted text-lg-start">
+          &copy;
+          {{date | date: 'yyyy'}}, Application - to-do list
+        </div>
+      </div>
+      <nav class="col-lg-6">
+        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com">
+              Creative Tim
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://creative-tim.com/about-us">
+              About Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="http://blog.creative-tim.com">
+              Blog
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/license">
+              Licenses
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </footer>
