@@ -8,7 +8,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from "@angular/material/table";
 import { MatTooltipModule } from "@angular/material/tooltip";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   exports: [
@@ -23,7 +23,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
   ],
 })
 export class MaterialUiModule {}
