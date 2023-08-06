@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{editTitle}}</h1>
+<div mat-dialog-content>
+  <mat-form-field class="example-form-field">
+    <mat-label>Name of category <span class="text-danger">*</span></mat-label>
+    <input matInput type="text" #inputTitle [(ngModel)]="categoryTitle" (keydown.enter)="onConfirmCategory()">
+    <button *ngIf="categoryTitle" matSuffix mat-icon-button aria-label="Clear" (click)="categoryTitle=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="accent" [disabled]="!categoryTitle" cdkFocusInitial (click)="onConfirmCategory()">
+    save changes
+  </button>
+  <button *ngIf="editTitle !== addCategory" mat-flat-button color="warn" cdkFocusInitial
+    (click)="onDeleteCategory()">delete</button>
+  <button mat-stroked-button [mat-dialog-close]="data.title" (click)="onCancel()">cancel</button>
+</div>

@@ -5,4 +5,13 @@ export enum EStaticVariables {
   INITIAL_ACTIVE_CATEGORY = "All",
   TASK_WITHOUT_COLOR = "#fff",
   TASK_COMPLETED_COLOR = "#ccc",
+  COMPLETED_TASK = "completed",
+  ADD_TASK = "Add task",
+  EDIT_TASK = "Edit task",
+  DELETE_TASK = "Delete task",
+  ADD_CATEGORY = "Add category",
+  EDIT_CATEGORY = "Edit category",
+  DELETE_CATEGORY = "Delete category",
+  NO_CATEGORY = "no category",
+  NO_PRIORITY = "no priority",
 }

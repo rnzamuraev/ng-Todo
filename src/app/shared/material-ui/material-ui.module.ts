@@ -1,29 +1,34 @@
 import { NgModule } from "@angular/core";
-import { MatButtonModule } from "@angular/material/button";
-import { MatRippleModule } from "@angular/material/core";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
 import { MatPaginatorModule } from "@angular/material/paginator";
-import { MatSelectModule } from "@angular/material/select";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from "@angular/material/table";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSelectModule } from "@angular/material/select";
+import { FormsModule } from "@angular/forms";
+// *****************
+import { MatOptionModule, MatRippleModule } from "@angular/material/core";
 import { MatTooltipModule } from "@angular/material/tooltip";
-// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   exports: [
-    MatFormFieldModule,
-    MatButtonModule,
     MatRippleModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
     MatTooltipModule,
     // **************** //
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    // BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatOptionModule,
+    FormsModule,
   ],
 })
 export class MaterialUiModule {}

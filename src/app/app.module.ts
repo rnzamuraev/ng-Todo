@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from "src/app/app.component";
@@ -13,7 +13,6 @@ import { ComponentsModule } from "src/app/components/components.module";
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    FormsModule,
     ComponentsModule,
   ],
   declarations: [AppComponent],

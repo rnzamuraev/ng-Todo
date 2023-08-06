@@ -8,9 +8,9 @@ import { ICommonDao } from "./common-dao.interface";
 export interface ITaskDao extends ICommonDao<ITask> {
   search(
     searchText: string,
-    category: ICategory,
-    priority: IPriority,
-    status: boolean
+    category: ICategory | null,
+    priority: IPriority | null,
+    status: boolean | null
   ): Observable<ITask[]>;
 
   getCountOfCompletedTasksInCategory(): Observable<number>;

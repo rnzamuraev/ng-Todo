@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite animal?</p> -->
+  <mat-form-field class="example-form-field">
+    <mat-label>Task text <span class="text-danger">*</span></mat-label>
+    <input matInput type="text" #inputTitle [(ngModel)]="taskTitle" (keydown.enter)="onConfirmTaskEditing()">
+    <button *ngIf="taskTitle" matSuffix mat-icon-button aria-label="Clear" (click)="taskTitle=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-form-field class="example-form-field">
+    <mat-label>Select a category</mat-label>
+    <mat-select [(ngModel)]="category">
+      <mat-option [value]="null">no category</mat-option>
+      <mat-option *ngFor="let cat of categories" [value]="cat">
+        {{cat.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-form-field">
+    <mat-label>Select a priority</mat-label>
+    <mat-select [(ngModel)]="priority">
+      <mat-option [value]="null">no priority</mat-option>
+      <mat-option *ngFor="let prior of priorities" [value]="prior">
+        {{prior.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="accent" [disabled]="inputTitle.value.trim().length <= 0" cdkFocusInitial
+    (click)="onConfirmTaskEditing()">save changes</button>
+  <button mat-stroked-button [mat-dialog-close]="data.title" (click)="onCancel()">cancel</button>
+</div>
