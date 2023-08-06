@@ -41,13 +41,33 @@ label {
 .cdk-column-priority {
   width: 10%;
 }
-.cdk-column-date-end {
-  width: 18%;
-}
 .cdk-column-status {
-  width: 5%;
+  width: 8%;
+}
+.cdk-column-edit {
+  width: 8%;
+  text-align: center;
 }
 .cdk-column-delete {
-  width: 5%;
+  width: 8%;
   text-align: center;
+}
+// .card-header {
+
+// }
+.card-content {
+  width: 100%;
+  padding: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: -1.5rem;
+}
+.card-body {
+  padding: 4.5rem 1rem 1rem;
+}
+h5 {
+  margin: 0;
+  padding: 0.5rem 0;
+  line-height: 22px;
 }

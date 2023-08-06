@@ -8,6 +8,12 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+// @import "assets/css/nucleo-icons.css";
+// @import "assets/css/nucleo-svg.css";
+// @import "assets/css/material-dashboard.css";
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// @import "~bootstrap-css-only/css/bootstrap.min.css";
+// ******************************************************
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -46,4 +52,10 @@ body {
 }
 .pd-0 {
   padding: 0px;
+}
+.pointer {
+  cursor: pointer;
+}
+.cdk-overlay-container {
+  z-index: 999999 !important;
 }

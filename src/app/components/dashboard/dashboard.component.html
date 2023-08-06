@@ -2,6 +2,7 @@
 
   <todo-info-dashboard></todo-info-dashboard>
 
-  <todo-task-list-table></todo-task-list-table>
+  <todo-task-list-table [tasksProps]="tasks" [categoriesProps]="categories" [prioritiesProps]="priorities"
+    (newTask)="getUpdateTasksProps($event)"></todo-task-list-table>
 
 </div>

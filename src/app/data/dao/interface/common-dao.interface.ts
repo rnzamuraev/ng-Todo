@@ -5,9 +5,10 @@ export interface ICommonDao<T> {
 
   get(id: number): Observable<T>;
 
-  add(obj: T): Observable<T>;
+  post(obj: T): void;
 
-  update(obj: T): Observable<T>;
+  // put(obj: T): Observable<T[]>;
+  put(obj: T): void;
 
-  delete(id: number): Observable<T>;
+  delete(obj: T): Observable<T[]>;
 }
