@@ -1,0 +1,20 @@
+<!-- <div class="col-lg-3 col-sm-6"> -->
+<div class="card  mb-2">
+  <div class="card-header p-3 pt-2">
+    <div
+      class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
+      <i class="material-icons-round opacity-10">{{iconProps}}</i>
+    </div>
+    <div class="text-end pt-1">
+      <!-- <p class="text-sm mb-0 text-capitalize">done</p> -->
+      <h2 *ngIf="totalCountTasksProps" class="mb-0">{{totalCountStatusTasksProps}} из {{totalCountTasksProps}}</h2>
+      <h2 *ngIf="!totalCountTasksProps" class="mb-0">{{totalCountStatusPercentTasksProps}}</h2>
+    </div>
+  </div>
+  <hr class="dark horizontal my-0">
+  <div class="card-footer p-3">
+    <p class="mb-0"><span class="text-sm font-weight-bolder"
+        [ngClass]="{ 'text-success': isCompletedProps, 'text-dark': !isCompletedProps }">{{textProps}}</span></p>
+  </div>
+</div>
+<!-- </div> -->

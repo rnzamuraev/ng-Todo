@@ -111,7 +111,9 @@ export class SidebarComponent implements OnInit {
       if (result.title === EStaticVariables.DELETE_CATEGORY) {
         console.log("delete: ", result);
 
+        this.stateService.setActiveTaskCategory$(null);
         this.updateTasks(result.category, result.title);
+        this.activeCategoryName = this.categoryNameAll;
         this.deleteCategory(result.category);
       }
     });

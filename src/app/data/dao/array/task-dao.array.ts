@@ -118,19 +118,19 @@ export class TaskDaoArray implements ITaskDao {
     return tasks;
   }
 
-  getCountOfCompletedTasksInCategory(): Observable<number> {
-    throw new Error("Method not implemented.");
-  }
+  // getCountOfCompletedTasksInCategory(category): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
 
-  getCountOfUncompletedTasksInCategory(): Observable<number> {
-    throw new Error("Method not implemented.");
-  }
+  // getCountOfUncompletedTasksInCategory(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
 
-  getTotalCountTasksInCategory(): Observable<number> {
-    throw new Error("Method not implemented.");
-  }
+  // getTotalCountTasksInCategory(category): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
 
-  getTotalCountTasks(): Observable<number> {
-    throw new Error("Method not implemented.");
-  }
+  // getTotalCountTasks(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
 }

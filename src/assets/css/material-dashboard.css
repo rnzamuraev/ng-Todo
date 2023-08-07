@@ -4701,9 +4701,13 @@ label,
   height: 48px;
 }
 
-.icon-md i {
+/* .icon-md i {
   top: 30%;
   font-size: 1.125rem;
+} */
+.icon-md i {
+  top: 13%;
+  font-size: 2rem;
 }
 
 .icon-md.icon-striped {

@@ -1,17 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CategoriesFilterPipe } from './categories-filter.pipe';
-import { TasksFilterPipe } from './tasks-filter.pipe';
-
-
+import { NgModule } from "@angular/core";
+import { TasksFilterPipe } from "./tasks-filter.pipe";
 
 @NgModule({
-  declarations: [
-    CategoriesFilterPipe,
-    TasksFilterPipe
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [TasksFilterPipe],
+  exports: [TasksFilterPipe],
 })
-export class PipeModule { }
+export class PipeModule {}

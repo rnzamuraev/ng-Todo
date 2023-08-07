@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { zip } from "rxjs";
 import { StateService } from "src/app/components/state.service";
 import { DataService } from "src/app/shared/services/data.service";
 import { ICategory } from "src/app/shared/types/category.interface";
@@ -15,40 +16,46 @@ export class DashboardComponent implements OnInit {
   public tasks!: ITask[];
   public categories!: ICategory[];
   public priorities!: IPriority[];
-  private activeCategory!: ICategory | null;
+  public activeCategory!: ICategory | null;
+  public totalCountTasks = 0;
 
   constructor(private dataService: DataService, private stateService: StateService) {}
 
   ngOnInit() {
-    this.initializeTasks();
-    this.initializeCategories$();
-    this.initializePriorities$();
+    this.initializeTasksParams();
+    this.getTasks$();
+    this.getCategories$();
+    this.getPriorities$();
     this.getActiveCategory$();
   }
 
-  private initializeTasks(): void {
-    this.dataService.getAllTasks().subscribe(data => {
-      this.stateService.setTasks$(data, "", null, null, null);
-    });
-    this.stateService.getTasks$.subscribe(data => {
-      this.tasks = data;
+  private initializeTasksParams(): void {
+    zip(
+      this.dataService.getAllTasks(),
+      this.dataService.getAllCategories(),
+      this.dataService.getAllPriorities()
+    ).subscribe(array => {
+      this.stateService.setTasks$(array[0], "", null, null, null);
+      this.stateService.setCategories$(array[1]);
+      this.stateService.setPriorities$(array[2]);
     });
   }
 
-  private initializeCategories$(): void {
-    this.dataService.getAllCategories().subscribe(category => {
-      this.stateService.setCategories$(category);
+  private getTasks$(): void {
+    this.stateService.getTasks$.subscribe(data => {
+      this.tasks = data;
+      this.getTotalCountTasks(data);
     });
+  }
+
+  private getCategories$(): void {
     this.stateService.getCategories$.subscribe(data => {
       console.log(data);
       this.categories = data;
     });
   }
 
-  private initializePriorities$(): void {
-    this.dataService.getAllPriorities().subscribe(priority => {
-      this.stateService.setPriorities$(priority);
-    });
+  private getPriorities$(): void {
     this.stateService.getPriorities$.subscribe(data => {
       console.log(data);
       this.priorities = data;
@@ -88,5 +95,21 @@ export class DashboardComponent implements OnInit {
     this.dataService.deleteTask(task).subscribe(tasks => {
       this.stateService.setTasks$(tasks, "", this.activeCategory, null, null);
     });
+  }
+
+  // getCountOfCompletedTasksInCategory(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
+
+  // getCountOfUncompletedTasksInCategory(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
+
+  // getTotalCountTasksCompleted(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
+
+  getTotalCountTasks(data: ITask[]): void {
+    this.totalCountTasks = data.length;
   }
 }

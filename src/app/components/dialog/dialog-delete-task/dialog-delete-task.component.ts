@@ -6,11 +6,11 @@ import { DialogEditTaskComponent } from "src/app/components/dialog/dialog-edit-t
 import { IDialogData } from "src/app/components/dialog/types/dialog.interface";
 
 @Component({
-  selector: "todo-dialog-delete",
-  templateUrl: "./dialog-delete.component.html",
-  styleUrls: ["./dialog-delete.component.scss"],
+  selector: "todo-dialog-delete-task",
+  templateUrl: "./dialog-delete-task.component.html",
+  styleUrls: ["./dialog-delete-task.component.scss"],
 })
-export class DialogDeleteComponent implements OnInit {
+export class DialogDeleteTaskComponent implements OnInit {
   public title!: string;
   public message!: string;
 

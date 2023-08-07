@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-// 
+//
 import { CategoryDaoArray } from "src/app/data/dao/array/category-dao.array";
 import { PriorityDaoArray } from "src/app/data/dao/array/priority-dao.array";
 import { TaskDaoArray } from "src/app/data/dao/array/task-dao.array";
@@ -67,6 +67,22 @@ export class DataService {
     console.log(tasks);
     return tasks;
   }
+
+  // getCountOfCompletedTasksInCategory(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
+
+  // getCountOfUncompletedTasksInCategory(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
+
+  // getTotalCountTasksInCategory(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
+
+  // getTotalCountTasks(): Observable<number> {
+  //   return this.getAll().pipe(map(tasks => tasks.length));
+  // }
 
   // *** Category *** //
   public getAllCategories(): Observable<ICategory[]> {
