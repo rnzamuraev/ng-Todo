@@ -1,6 +1,10 @@
 <div class="main-content">
 
-  <todo-info-dashboard></todo-info-dashboard>
+  <!-- <todo-info-dashboard [totalCountTasksProps]="totalCountTasks" -->
+  <todo-info-dashboard [totalCountTasksProps]="(tasks | tasksFilter: '': activeCategory: null: null).length"
+    [totalCountCompletedTasksProps]="(tasks | tasksFilter: '': activeCategory: null: true).length"
+    [totalCountUncompletedTasksProps]="(tasks | tasksFilter: '': activeCategory: null: false).length">
+  </todo-info-dashboard>
 
   <todo-task-list-table [tasksProps]="tasks" [categoriesProps]="categories" [prioritiesProps]="priorities"
     (newTask)="getUpdateTasksProps($event)"></todo-task-list-table>

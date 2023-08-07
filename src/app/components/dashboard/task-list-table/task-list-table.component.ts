@@ -15,7 +15,7 @@ import { MatTableDataSource } from "@angular/material/table";
 // import { DataService } from "src/app/shared/services/data.service";
 import { DialogEditTaskComponent } from "src/app/components/dialog/dialog-edit-task/dialog-edit-task.component";
 // import { StateService } from "src/app/components/state.service";
-import { DialogDeleteComponent } from "src/app/components/dialog/dialog-delete/dialog-delete.component";
+import { DialogDeleteTaskComponent } from "src/app/components/dialog/dialog-delete-task/dialog-delete-task.component";
 import { ICategory } from "src/app/shared/types/category.interface";
 import { IPriority } from "src/app/shared/types/priority.interface";
 import { EStaticVariables } from "src/app/shared/types/staticVariable.enum";
@@ -148,7 +148,7 @@ export class TaskListTableComponent implements OnInit, AfterViewInit {
   }
 
   public onOpenDialogDelete(task: ITask) {
-    const dialogRef = this.dialog.open(DialogDeleteComponent, {
+    const dialogRef = this.dialog.open(DialogDeleteTaskComponent, {
       data: {
         task,
         title: EStaticVariables.DELETE_TASK,

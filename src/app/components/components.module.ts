@@ -10,8 +10,10 @@ import { FooterComponent } from "src/app/components/footer/footer.component";
 import { NavbarComponent } from "src/app/components/navbar/navbar.component";
 import { SidebarComponent } from "src/app/components/sidebar/sidebar.component";
 import { SharedModule } from "src/app/shared/shared.module";
-import { DialogDeleteComponent } from "./dialog/dialog-delete/dialog-delete.component";
+import { DialogDeleteTaskComponent } from "./dialog/dialog-delete-task/dialog-delete-task.component";
 import { DialogEditCategoryComponent } from "./dialog/dialog-edit-category/dialog-edit-category.component";
+import { TaskFilterComponent } from './dashboard/task-filter/task-filter.component';
+import { InfoCardComponent } from './dashboard/info-dashboard/info-card/info-card.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { DialogEditCategoryComponent } from "./dialog/dialog-edit-category/dialo
     TaskListTableComponent,
     InfoPanelComponent,
     DialogEditTaskComponent,
-    DialogDeleteComponent,
+    DialogDeleteTaskComponent,
     DialogEditCategoryComponent,
+    TaskFilterComponent,
+    InfoCardComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule],
   exports: [

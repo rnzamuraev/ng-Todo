@@ -34,9 +34,13 @@ Change icon size
   width: 0.5em;
 }
 
-.icon-sm {
+/* .icon-sm {
   height: 0.8em;
   width: 0.8em;
+} */
+.icon-sm {
+  height: 1.3em;
+  width: 1.3em;
 }
 
 .icon-lg {

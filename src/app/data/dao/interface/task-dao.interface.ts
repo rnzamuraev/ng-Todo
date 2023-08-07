@@ -13,11 +13,11 @@ export interface ITaskDao extends ICommonDao<ITask> {
     status: boolean | null
   ): Observable<ITask[]>;
 
-  getCountOfCompletedTasksInCategory(): Observable<number>;
+  // getCountOfCompletedTasksInCategory(): Observable<number>;
 
-  getCountOfUncompletedTasksInCategory(): Observable<number>;
+  // getCountOfUncompletedTasksInCategory(): Observable<number>;
 
-  getTotalCountTasksInCategory(): Observable<number>;
+  // getTotalCountTasksInCategory(): Observable<number>;
 
-  getTotalCountTasks(): Observable<number>;
+  // getTotalCountTasks(): Observable<number>;
 }
