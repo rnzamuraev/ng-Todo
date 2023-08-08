@@ -1,14 +1,13 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { ITask } from '../shared/types/task.interface'
-import { ICategory } from '../shared/types/category.interface'
-import { IPriority } from '../shared/types/priority.interface'
-import { EStaticVariables } from '../shared/types/staticVariable.enum'
+import { Pipe, PipeTransform } from "@angular/core";
+import { ICategory } from "../shared/types/category.interface";
+import { IPriority } from "../shared/types/priority.interface";
+import { EStaticVariables } from "../shared/types/staticVariable.enum";
+import { ITask } from "../shared/types/task.interface";
 
 @Pipe({
-  name: 'tasksFilter'
+  name: "tasksFilter",
 })
 export class TasksFilterPipe implements PipeTransform {
-
   transform(
     data: ITask[],
     searchText: string,
@@ -17,22 +16,23 @@ export class TasksFilterPipe implements PipeTransform {
     status: boolean | null
   ): ITask[] {
     let tasks = data;
-    console.log(category);
 
     if (searchText !== "") {
-      tasks = data.filter(task => task.name === searchText);
+      tasks = tasks.filter(task =>
+        task.name.toLowerCase().includes(searchText.trim().toLowerCase())
+      );
     }
 
     if (category !== null && category.name !== EStaticVariables.INITIAL_ACTIVE_CATEGORY) {
-      tasks = data.filter(task => task.category && task.category.id === category.id);
+      tasks = tasks.filter(task => task.category && task.category.id === category.id);
     }
 
     if (priority !== null) {
-      tasks = data.filter(task => task.priority === priority);
+      tasks = tasks.filter(task => task.priority && task.priority.id === priority.id);
     }
 
     if (status !== null) {
-      tasks = data.filter(task => task.status === status);
+      tasks = tasks.filter(task => task.status === status);
     }
 
     console.log(tasks);
