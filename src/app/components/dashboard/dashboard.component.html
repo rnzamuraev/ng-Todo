@@ -6,7 +6,12 @@
     [totalCountUncompletedTasksProps]="(tasks | tasksFilter: '': activeCategory: null: false).length">
   </todo-info-dashboard>
 
-  <todo-task-list-table [tasksProps]="tasks" [categoriesProps]="categories" [prioritiesProps]="priorities"
+  <todo-task-filter [prioritiesProps]="priorities" (searchText)="getSearchTextProps($event)"
+    (priority)="getPriorityProps($event)" (status)="getStatusProps($event)"></todo-task-filter>
+  <!-- <todo-task-filter></todo-task-filter> -->
+
+  <todo-task-list-table [tasksProps]="tasks | tasksFilter: searchText: activeCategory: priority: status"
+    [categoriesProps]="categories" [prioritiesProps]="priorities"
     (newTask)="getUpdateTasksProps($event)"></todo-task-list-table>
 
 </div>

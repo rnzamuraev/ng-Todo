@@ -17,7 +17,9 @@ export class DashboardComponent implements OnInit {
   public categories!: ICategory[];
   public priorities!: IPriority[];
   public activeCategory!: ICategory | null;
-  public totalCountTasks = 0;
+  public searchText: string = "";
+  public priority: IPriority | null = null;
+  public status: boolean | null = null;
 
   constructor(private dataService: DataService, private stateService: StateService) {}
 
@@ -44,7 +46,6 @@ export class DashboardComponent implements OnInit {
   private getTasks$(): void {
     this.stateService.getTasks$.subscribe(data => {
       this.tasks = data;
-      this.getTotalCountTasks(data);
     });
   }
 
@@ -97,19 +98,18 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  // getCountOfCompletedTasksInCategory(): Observable<number> {
-  //   return this.getAll().pipe(map(tasks => tasks.length));
-  // }
+  public getSearchTextProps(props: string) {
+    console.log(props);
+    this.searchText = props;
+  }
 
-  // getCountOfUncompletedTasksInCategory(): Observable<number> {
-  //   return this.getAll().pipe(map(tasks => tasks.length));
-  // }
+  public getPriorityProps(props: IPriority | null) {
+    console.log(props);
+    this.priority = props;
+  }
 
-  // getTotalCountTasksCompleted(): Observable<number> {
-  //   return this.getAll().pipe(map(tasks => tasks.length));
-  // }
-
-  getTotalCountTasks(data: ITask[]): void {
-    this.totalCountTasks = data.length;
+  public getStatusProps(props: boolean | null) {
+    console.log(props);
+    this.status = props;
   }
 }
