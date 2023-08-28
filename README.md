@@ -10,4 +10,4 @@ Project using the following libraries and technologies:
 
 ## Demo Link
 
-[Open](http://cherber67y.temp.swtest.ru/)
+[Open](http://rnzamurae.temp.swtest.ru/)
